@@ -1,7 +1,6 @@
+import buildings.StudentFlat;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.time.LocalDate;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -11,12 +10,17 @@ public class StudentFlatTest {
 
     @BeforeEach
     void setUp(){
-        studentFlat = new StudentFlat(2, LocalDate.of(2000,11,12),22321L);
+        studentFlat = new StudentFlat(2, 280,1234L);
     }
 
     @Test
-    void canCalculateCost(){
-        assertThat(studentFlat.calculateCost()).isEqualTo(0);
+    void canCalculateMonthlyFee(){
+        assertThat(studentFlat.calculateMonthlyFee()).isEqualTo(1200);
+    }
+
+    @Test
+    void canHoldParties(){
+        assertThat(studentFlat.holdParties()).isEqualTo("Welcome to the number 1235 party of the student hall.");
     }
 
 }

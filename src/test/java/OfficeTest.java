@@ -1,7 +1,6 @@
+import buildings.Office;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.time.LocalDate;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -11,16 +10,16 @@ public class OfficeTest {
 
     @BeforeEach
     void setUp(){
-        office = new Office(3, LocalDate.of(1980,1,2),"HelloWorld");
+        office = new Office(3,14600, "Duolingo",10);
     }
 
     @Test
-    void canCalculateCost(){
-        assertThat(office.calculateCost()).isEqualTo(0);
+    void canCalculateMonthlyFee(){
+        assertThat(office.calculateMonthlyFee()).isEqualTo(1200);
     }
 
     @Test
     void canHostMeeting(){
-        assertThat(office.holdMeeting()).isEqualTo(true);
+        assertThat(office.holdMeeting()).isEqualTo("This office can hold a meeting of 10 people.");
     }
 }
